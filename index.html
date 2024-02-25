@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카카오페이 | 마음놓고 금융하다</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+  <link rel="shortcut icon" href="https://t1.daumcdn.net/kakaopay/icons/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./main.css">
+  
+  <!-- Lodash -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <!-- ScrollMagic -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script defer src="./main.js"></script>
+</head>
+<body>
+  <div class="main-inner">
+    <div class="sub-inner">
+      <div class="video-inner">
+        <div class="video">
+          <video autoplay loop muted playsinline
+          src="https://t1.daumcdn.net/kakaopay/20211101152741/08a0cb31a3.mp4" 
+          poster="https://t1.kakaocdn.net/pay_brand_admin/file/hT33GWnKrWCjEesdqOVEq/poster.jpg"
+          class="video-size">
+          </video>
+          <div class="cover"></div>       
+        </div>
+      </div>
+
+      <!-- Header Section -->
+      <div class="grid-first">
+        <div class="head">
+          <div class="head-left">
+            <div class="logo__cover">
+              <a href="/" class="logo">
+                <svg viewBox="0 0 92 22" class="logo__text">           
+                  <g fill="#fff">
+                    <path d="M14.933 15.68c.266 0 .55-.034.854-.1.303-.067.602-.16.898-.278.296-.118.576-.258.843-.421.266-.163.495-.34.687-.532v-2.795H16.13c-1.064 0-1.84.182-2.328.544-.488.362-.732.92-.732 1.674 0 .621.159 1.094.477 1.42.318.325.78.487 1.386.487m-3.637-1.818c0-1.198.388-2.1 1.164-2.706.776-.606 1.918-.91 3.427-.91h2.328v-.953c0-.931-.2-1.593-.599-1.984-.399-.392-.99-.588-1.774-.588-.547 0-1.109.074-1.686.221-.576.148-1.101.333-1.574.555l-.554-1.309c.59-.34 1.223-.602 1.896-.787.672-.184 1.327-.277 1.963-.277 1.389 0 2.424.34 3.104 1.02.68.68 1.02 1.76 1.02 3.238v7.63h-1.374l-.222-1.287c-.577.473-1.21.835-1.896 1.087-.688.25-1.328.376-1.919.376-1.035 0-1.844-.292-2.428-.876-.585-.583-.876-1.4-.876-2.45M30.68 4.99l1.464 1.087-3.836 4.79 4.435 5.3-1.464 1.154-5.167-6.365 4.569-5.966zm-5.388 12.02h-1.863V.421L25.292 0v17.01zM37.733 15.68c.266 0 .55-.034.854-.1.303-.067.602-.16.898-.278.296-.118.576-.258.843-.421.266-.163.495-.34.687-.532v-2.795H38.93c-1.065 0-1.841.182-2.33.544-.487.362-.73.92-.73 1.674 0 .621.158 1.094.476 1.42.318.325.78.487 1.386.487m-3.637-1.818c0-1.198.388-2.1 1.164-2.706.776-.606 1.918-.91 3.426-.91h2.329v-.953c0-.931-.2-1.593-.599-1.984-.399-.392-.99-.588-1.774-.588-.547 0-1.109.074-1.685.221-.577.148-1.102.333-1.575.555l-.554-1.309c.59-.34 1.223-.602 1.896-.787.673-.184 1.327-.277 1.962-.277 1.39 0 2.425.34 3.105 1.02.68.68 1.02 1.76 1.02 3.238v7.63h-1.375l-.221-1.287c-.577.473-1.209.835-1.896 1.087-.688.25-1.328.376-1.919.376-1.035 0-1.845-.292-2.428-.876-.584-.583-.876-1.4-.876-2.45M50.412 6.653c-1.035 0-1.838.388-2.406 1.165-.57.776-.854 1.903-.854 3.382 0 1.478.284 2.598.854 3.36.568.761 1.37 1.142 2.406 1.142 1.034 0 1.837-.38 2.406-1.143.569-.76.854-1.88.854-3.36 0-1.478-.285-2.605-.854-3.381-.57-.777-1.372-1.165-2.406-1.165m0-1.53c1.626 0 2.897.521 3.814 1.563.917 1.043 1.375 2.548 1.375 4.514 0 1.951-.455 3.445-1.364 4.48-.91 1.034-2.184 1.552-3.825 1.552-1.627 0-2.898-.518-3.815-1.552-.917-1.035-1.375-2.529-1.375-4.48 0-1.966.462-3.471 1.386-4.514.924-1.042 2.192-1.563 3.804-1.563M62.816 7.363c-.295 0-.61.04-.942.122-.333.081-.625.181-.876.3v7.251c.103.03.255.049.454.056.2.007.403.01.61.01 1.168 0 1.992-.372 2.473-1.12.48-.746.721-1.755.721-3.026 0-.547-.037-1.043-.111-1.486-.074-.444-.203-.82-.388-1.131-.185-.31-.432-.55-.743-.72-.31-.171-.71-.256-1.198-.256m.067 9.98c-.31 0-.61-.015-.898-.045-.288-.03-.617-.096-.987-.2v4.414h-2.972V5.322h2.107l.355.976c.384-.384.839-.702 1.364-.953.524-.252 1.186-.377 1.985-.377.768 0 1.43.137 1.985.41.554.274 1.012.67 1.375 1.187.362.517.632 1.145.81 1.885.176.74.265 1.574.265 2.506 0 .976-.133 1.855-.399 2.639-.266.784-.636 1.452-1.109 2.007-.473.554-1.039.983-1.696 1.286-.659.303-1.387.455-2.185.455M73.902 15.014c.518 0 1.01-.096 1.475-.288.466-.192.832-.407 1.098-.643v-2.285h-1.597c-1.626 0-2.44.607-2.44 1.819 0 .429.122.769.367 1.02.243.252.61.377 1.097.377m-4.147-1.375c0-1.242.41-2.177 1.231-2.805.82-.628 2.03-.943 3.626-.943h1.863v-.4c0-.324-.03-.612-.089-.864-.059-.251-.17-.462-.332-.632-.163-.17-.381-.3-.655-.388-.273-.089-.632-.133-1.075-.133-.547 0-1.076.059-1.586.177-.51.119-1.031.318-1.564.6l-.82-2.041c.562-.385 1.23-.688 2.007-.91.776-.221 1.549-.332 2.318-.332 1.508 0 2.646.37 3.415 1.109.768.74 1.153 1.87 1.153 3.393v7.54h-2.085l-.332-.998c-.607.473-1.217.81-1.83 1.01-.614.199-1.179.298-1.696.298-1.154 0-2.033-.321-2.64-.964-.606-.643-.909-1.549-.909-2.717M88.511 15.79c-.532 1.479-1.145 2.732-1.84 3.76-.695 1.027-1.508 1.844-2.44 2.45l-1.84-1.685c.635-.548 1.16-1.065 1.574-1.553.414-.488.791-1.05 1.131-1.685L80.971 5.7l2.95-.799 2.661 9.204 2.64-9.226 2.926.843-3.637 10.068zM2.491 0L.63.42V17.01H2.49V0zm.821 10.956L8.48 17.32l1.464-1.154-4.435-5.3 3.836-4.79L7.881 4.99l-4.569 5.966z" transform="translate(-181 -778) translate(101 747) translate(79 31) translate(.371)"></path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="head-center">
+            <div class="menu" tabindex="-1">
+              <div class="item__first">카카오페이</div>
+            </div>
+            <div class="menu">
+              <div class="item">서비스</div>
+              <div class="item__contents">
+                <div class="contents__menu">
+                  <div class="inner">
+                    <li class="li__first">
+                      <h4>생활하다</h4>
+                      <ul>
+                        <li>송금</li>
+                        <li>결제</li>
+                        <li>멤버십</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4>관리하다</h4>
+                      <ul>
+                        <li>자산관리</li>
+                        <li>내문서함</li>
+                        <li>청구서</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4>금융하다</h4>
+                      <ul>
+                        <li>투자</li>
+                        <li>대출</li>
+                        <li>보험</li>
+                        <li>추천상품</li>
+                      </ul>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu">
+              <a class="item">소식</a>
+              <div class="item__contents">
+                <div class="contents__menu">
+                  <div class="inner">
+                    <li class="li__first">
+                      <h4>보도자료</h4>
+                    </li>
+                    <li>
+                      <h4>공지사항</h4>
+                    </li>
+                    <li>
+                      <h4>공식채널</h4>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu">
+              <a class="item">ESG</a>
+              <div class="item__contents">
+                <div class="contents__menu">
+                  <div class="inner">
+                    <li class="li__first">
+                      <h4>카카오페이의 ESG</h4>
+                      <ul>
+                        <li>소개</li>
+                        <li>전략</li>
+                        <li>대외성과</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4>환경</h4>
+                      <ul>
+                        <li>환경경영</li>
+                        <li>기후변화대응</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4>사회</h4>
+                      <ul>
+                        <li>인권경영</li>
+                        <li>크루가치</li>
+                        <li>사용자경험</li>
+                        <li>상생활동</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4>거버넌스</h4>
+                      <ul>
+                        <li>투명경영</li>
+                        <li>윤리경영</li>
+                        <li>리스크관리</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4>ESG자료실</h4>
+                      <ul>
+                        <li>ESG보고서</li>
+                        <li>정책 / 규정</li>
+                      </ul>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu">
+              <a class="item">투자정보</a>
+              <div class="item__contents">
+                <div class="contents__menu">
+                  <div class="inner">
+                    <li class="li__first">
+                      <h4>경영정보</h4>
+                      <ul>
+                        <li>주주구성</li>
+                        <li>이사회</li>
+                        <li>정관</li>
+                        <li>기업지배구조</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4>공시정보</h4>
+                    </li>
+                    <li>
+                      <h4>주가정보</h4>
+                    </li>
+                    <li>
+                      <h4>재무정보</h4>
+                      <ul>
+                        <li>연결재무제표</li>
+                        <li>별도재무제표</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4>IR자료실</h4>
+                      <ul>
+                        <li>IR 미팅예약</li>
+                        <li>정기주주총회</li>
+                        <li>실적발표</li>
+                        <li>정기보고서</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4>공고사항</h4>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu">
+              <a class="item">문의</a>
+              <div class="item__contents">
+                <div class="contents__menu">
+                  <div class="inner">
+                    <li class="li__first">
+                      <h4>생활하다</h4>
+                      <ul>
+                        <li>송금</li>
+                        <li>결제</li>
+                        <li>멤버십</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4>관리하다</h4>
+                      <ul>
+                        <li>자산관리</li>
+                        <li>내문서함</li>
+                        <li>청구서</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4>금융하다</h4>
+                      <ul>
+                        <li>투자</li>
+                        <li>대출</li>
+                        <li>보험</li>
+                        <li>추천상품</li>
+                      </ul>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu">
+              <a class="item__last">채용</a>
+            </div>
+          </div>
+          <div class="head-right">
+            <ul class="r-menu">
+              <li class="ko-list">
+                <a class="kor">KOR</a>
+              </li>
+              <li class="en-list">
+                <a class="eng">ENG</a>
+              </li>
+            </ul>
+            <div class="nav" tabindex="-1">
+              <svg width="44" height="44" viewBox="0 0 44 44">
+                <rect width="36" height="36" x="4" y="4" fill="none" opacity=".04" rx="6">
+                </rect>
+                <g fill="none" fill-rule="evenodd" stroke="#fff" stroke-width="1.5">
+                  <path d="M0 1L16 1" transform="translate(-310 -30) translate(20 30)
+                translate(304 14) rotate(-180 8 1)"></path>
+                <path d="M0 8L16 8" transform="translate(-310 -30) translate(20 30) translate(304 14) rotate(-180 8 8) "></path>
+                <path d="M0 15L16 15" transform="translate(-310 -30) translate(20 30)  translate(304 14) rotate(-180 8 15)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- First Section -->
+        <div class="maina">
+          <div class="maina__circle"></div>
+        </div>
+        <div class="mainb"></div>
+        <div class="mainc"></div>
+        <div class="maind">
+          <div class="maind__circle"></div>
+        </div>
+        <div class="maine"></div>
+        <div class="mainf"></div>
+        <div class="maing"></div>
+        <div class="mainh"></div>
+        <div class="mainbc">
+          <div class="mainbc__content">마음놓고 금융하다</div>
+          <div class="mainbc__app">
+            <a href="https://kko.to/Bd9w5MDjo" target="_blank" rel="noopener noreferrer" class="appstore">
+              <svg width="117" height="29" viewBox="0 0 117 29">
+                <defs>
+                  <filter>
+                    <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+                  </filter>
+                  <filter>
+                    <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+                  </filter>
+                </defs>
+                <g fill="none" fill-rule="evenodd">
+                  <path stroke="rgba(0, 0, 0, 0)" d="M114-13.5a27.41 27.41 0 0119.445 8.055A27.408 27.408 0 01141.5 14a27.41 27.41 0 01-8.055 19.445A27.408 27.408 0 01114 41.5h0H2a27.41 27.41 0 01-19.445-8.055A27.408 27.408 0 01-25.5 14a27.41 27.41 0 018.055-19.445A27.408 27.408 0 012-13.5h0z"></path>
+                  <g>
+                    <path fill="#d2d2d2" fill-rule="nonzero" d="M19.244 15.115c-.03-3.593 2.926-5.34 3.056-5.42-1.678-2.449-4.274-2.79-5.183-2.82-2.177-.231-4.294 1.315-5.402 1.315-1.129 0-2.846-1.285-4.684-1.255-2.367.04-4.593 1.415-5.802 3.563C-1.277 14.864.59 21.287 2.997 24.82c1.208 1.726 2.606 3.663 4.454 3.593 1.797-.07 2.476-1.155 4.643-1.155 2.157 0 2.786 1.155 4.664 1.114 1.937-.03 3.145-1.736 4.314-3.482 1.388-1.977 1.947-3.934 1.967-4.035-.05-.02-3.755-1.445-3.795-5.74M15.699 4.556c.969-1.214 1.628-2.87 1.448-4.556-1.398.06-3.156.974-4.164 2.168-.889 1.054-1.688 2.77-1.488 4.386 1.578.12 3.195-.803 4.204-1.998"></path>
+                  </g>
+                  <g>
+                    <path fill="#d2d2d2" fill-rule="nonzero" d="M43.975 20.453h-2.416l-1.323-4.181h-4.602l-1.256 4.181H32.03l4.553-14.23h2.819l4.573 14.23zm-4.132-5.935l-1.199-3.71c-.124-.385-.364-1.271-.709-2.678h-.048a124.65 124.65 0 01-.671 2.679l-1.18 3.709h3.807zm15.837.684c0 1.744-.47 3.122-1.419 4.133-.844.906-1.898 1.35-3.144 1.35-1.352 0-2.32-.482-2.915-1.456v5.386H45.93v-11.05c0-1.1-.029-2.217-.086-3.373h1.994l.125 1.628H48c.757-1.223 1.908-1.84 3.442-1.84 1.207 0 2.204.482 3.01 1.436.824.963 1.227 2.216 1.227 3.786zm-2.31.077c0-1.002-.221-1.82-.672-2.466-.489-.675-1.15-1.012-1.974-1.012-.556 0-1.065.193-1.525.559-.45.376-.757.857-.891 1.464-.067.28-.106.511-.106.694v1.715c0 .742.23 1.378.68 1.888.451.511 1.046.771 1.774.771.854 0 1.515-.337 1.994-.992.48-.665.72-1.532.72-2.62zm14.044-.077c0 1.744-.47 3.122-1.419 4.133-.844.906-1.898 1.35-3.144 1.35-1.352 0-2.32-.482-2.915-1.456v5.386h-2.272v-11.05c0-1.1-.029-2.217-.086-3.373h1.994l.125 1.628h.038c.757-1.223 1.908-1.84 3.442-1.84 1.207 0 2.204.482 3.01 1.436.824.963 1.227 2.216 1.227 3.786zm-2.31.077c0-1.002-.221-1.82-.672-2.466-.489-.675-1.15-1.012-1.974-1.012-.556 0-1.065.193-1.525.559-.45.376-.747.857-.891 1.464-.067.28-.106.511-.106.694v1.715c0 .742.23 1.378.68 1.888.452.511 1.046.771 1.774.771.854 0 1.525-.337 1.994-.992.49-.665.72-1.532.72-2.62zm15.444 1.185c0 1.214-.422 2.197-1.256 2.958-.92.829-2.205 1.243-3.854 1.243-1.524 0-2.742-.299-3.662-.886l.527-1.898a6.35 6.35 0 003.279.886c.853 0 1.524-.193 1.994-.578.479-.385.719-.906.719-1.551 0-.578-.202-1.06-.585-1.455-.393-.395-1.045-.761-1.956-1.099-2.502-.934-3.739-2.293-3.739-4.075 0-1.166.441-2.12 1.314-2.871.871-.742 2.031-1.118 3.48-1.118 1.284 0 2.358.222 3.211.675l-.575 1.85c-.805-.434-1.706-.656-2.723-.656-.795 0-1.428.203-1.879.588-.373.357-.565.78-.565 1.291 0 .559.22 1.031.652 1.388.374.337 1.064.703 2.06 1.098 1.218.491 2.11 1.07 2.685 1.734.585.665.873 1.494.873 2.476m7.515-4.557h-2.502v4.981c0 1.262.441 1.898 1.323 1.898.403 0 .738-.038 1.007-.106l.067 1.735c-.45.163-1.035.25-1.764.25-.901 0-1.591-.28-2.1-.829-.508-.549-.757-1.474-.757-2.765v-5.174h-1.486v-1.705h1.486V8.313l2.224-.674v2.553h2.502v1.715m11.255 3.333c0 1.58-.45 2.872-1.342 3.883-.94 1.041-2.186 1.561-3.739 1.561-1.495 0-2.694-.5-3.585-1.493-.892-.992-1.333-2.255-1.333-3.777 0-1.59.46-2.89 1.371-3.902.92-1.012 2.157-1.522 3.71-1.522 1.496 0 2.704.5 3.614 1.503.873.963 1.304 2.216 1.304 3.748zm-2.349.049c0-.944-.2-1.744-.604-2.419-.479-.818-1.16-1.223-2.042-1.223-.91 0-1.61.405-2.08 1.223-.412.675-.604 1.494-.604 2.467 0 .944.202 1.754.604 2.418.49.82 1.18 1.224 2.061 1.224.863 0 1.544-.414 2.042-1.243.412-.694.623-1.503.623-2.447zm9.731-3.093a4.234 4.234 0 00-.72-.058c-.795 0-1.418.299-1.85.906-.373.53-.565 1.214-.565 2.023v5.386h-2.272V13.42c0-1.185-.02-2.264-.067-3.228h1.974l.086 1.966h.067c.24-.675.614-1.224 1.131-1.629.508-.366 1.055-.549 1.64-.549.21 0 .402.02.565.039l.01 2.177m10.143 2.64c0 .405-.028.752-.086 1.03h-6.806c.028 1.013.354 1.793.987 2.323.575.472 1.313.713 2.224.713 1.007 0 1.927-.164 2.752-.482l.354 1.58c-.968.424-2.109.636-3.422.636-1.582 0-2.828-.472-3.73-1.407-.9-.934-1.351-2.196-1.351-3.767 0-1.541.422-2.832 1.265-3.863.882-1.099 2.071-1.649 3.567-1.649 1.466 0 2.588.55 3.336 1.648.604.886.91 1.956.91 3.237zm-2.166-.588c.019-.674-.134-1.262-.441-1.753-.393-.636-.997-.954-1.802-.954-.739 0-1.343.308-1.803.925-.374.491-.604 1.089-.67 1.773l4.716.01z"></path>
+                  </g>
+                </g>
+              </svg>
+            </a>
+            <a href="https://kko.to/T2WUa6Y5H" target="_blank" rel="noopener noreferrer" class="playstore">
+              <svg width="124" height="27" viewBox="0 0 124 27">
+                <defs>
+                  <linearGradient id="cqv5ryixya" x1="61.07%" x2="26.016%" y1="4.84%" y2="71.968%">
+                    <stop offset="0%" stop-color="#00A0FF"></stop>
+                    <stop offset=".7%" stop-color="#00A1FF"></stop>
+                    <stop offset="26%" stop-color="#00BEFF"></stop>
+                    <stop offset="51.2%" stop-color="#00D2FF"></stop>
+                    <stop offset="76%" stop-color="#00DFFF"></stop>
+                    <stop offset="100%" stop-color="#00E3FF"></stop>
+                  </linearGradient>
+                  <linearGradient id="piafcmxlvb" x1="107.724%" x2="-130.67%" y1="49.424%" y2="49.424%">
+                    <stop offset="0%" stop-color="#FFE000"></stop>
+                    <stop offset="40.9%" stop-color="#FFBD00"></stop>
+                    <stop offset="77.5%" stop-color="orange"></stop>
+                    <stop offset="100%" stop-color="#FF9C00"></stop>
+                  </linearGradient><linearGradient id="0ad54x62ac" x1="86.389%" x2="-49.886%" y1="30.898%" y2="135.696%">
+                    <stop offset="0%" stop-color="#FF3A44"></stop>
+                    <stop offset="100%" stop-color="#C31162"></stop>
+                  </linearGradient>
+                  <linearGradient id="97278ebn3d" x1="-18.581%" x2="42.275%" y1="-12.429%" y2="34.885%">
+                    <stop offset="0%" stop-color="#32A071"></stop><stop offset="6.9%" stop-color="#2DA771"></stop>
+                    <stop offset="47.6%" stop-color="#15CF74"></stop><stop offset="80.1%" stop-color="#06E775"></stop>
+                    <stop offset="100%" stop-color="#00F076"></stop>
+                  </linearGradient>
+                </defs>
+                <g fill="none" fill-rule="evenodd">
+                  <g fill-rule="nonzero">
+                    <path stroke="rgba(0, 0, 0, 0)" d="M140 .5c7.594 0 14.469 3.078 19.445 8.055C164.422 13.53 167.5 20.406 167.5 28c0 7.594-3.078 14.469-8.055 19.445C154.47 52.422 147.594 55.5 140 55.5h0H28c-7.594 0-14.469-3.078-19.445-8.055C3.578 42.47.5 35.594.5 28c0-7.594 3.078-14.469 8.055-19.445C13.53 3.578 20.406.5 28 .5h0z" transform="translate(-567 -833) translate(-461) translate(819 672) translate(0 146) translate(184)"></path>
+                    <g>
+                      <path fill="#FFF" d="M61.362 10.284c-2.61 0-4.676 2.024-4.676 4.834 0 2.699 2.066 4.835 4.676 4.835 2.61 0 4.676-2.024 4.676-4.835 0-2.923-2.066-4.834-4.676-4.834zm0 7.645c-1.414 0-2.61-1.237-2.61-2.923s1.196-2.923 2.61-2.923c1.413 0 2.61 1.124 2.61 2.923 0 1.686-1.197 2.923-2.61 2.923zm-10.114-7.645c-2.61 0-4.676 2.024-4.676 4.834 0 2.699 2.066 4.835 4.676 4.835 2.61 0 4.676-2.024 4.676-4.835 0-2.923-2.066-4.834-4.676-4.834zm0 7.645c-1.413 0-2.61-1.237-2.61-2.923s1.197-2.923 2.61-2.923c1.414 0 2.61 1.124 2.61 2.923 0 1.686-1.196 2.923-2.61 2.923zm-12.07-4.16h4.675c-.108 1.124-.543 2.024-1.087 2.586-.653.675-1.74 1.462-3.589 1.462-2.936 0-5.11-2.361-5.11-5.397 0-3.035 2.283-5.396 5.11-5.396 1.523 0 2.719.674 3.589 1.461l1.414-1.461C42.983 5.899 41.46 5 39.286 5 35.371 5 32 8.373 32 12.42s3.371 7.42 7.286 7.42c2.175 0 3.697-.674 5.002-2.136 1.305-1.349 1.74-3.26 1.74-4.722 0-.45 0-.9-.108-1.236h-6.743v2.023zm45.456-3.485c-2.393 0-4.35 1.911-4.35 4.834 0 2.699 1.957 4.835 4.567 4.835 2.066 0 3.371-1.35 3.806-2.136l-1.522-1.125c-.544.787-1.196 1.35-2.284 1.35-1.087 0-1.74-.45-2.284-1.462l6.199-2.698-.218-.562c-.435-1.125-1.522-3.036-3.914-3.036zm-2.393 4.61c0-1.8 1.414-2.811 2.393-2.811.76 0 1.522.45 1.74 1.012l-4.133 1.798zm-5.111 4.609h2.066V5.45H77.13v14.053zm-5.764-9.331c-2.283 0-4.458 2.136-4.458 4.834 0 2.698 2.066 4.722 4.458 4.722 1.088 0 1.958-.562 2.393-1.124h.109v.674c0 1.799-.98 2.81-2.502 2.81-1.196 0-2.066-.899-2.283-1.686l-1.74.787C67.887 22.426 69.19 24 71.475 24c2.393 0 4.35-1.462 4.35-4.947V10.51h-1.957v.787c-.544-.562-1.414-1.124-2.502-1.124zm.11 7.757c-1.415 0-2.61-1.237-2.61-2.923s1.195-2.923 2.61-2.923c1.413 0 2.5 1.237 2.5 2.923s-1.087 2.923-2.5 2.923zm21.64-12.48v14.054h2.066v-5.284h2.827c2.284 0 4.46-1.686 4.46-4.385 0-2.698-2.176-4.384-4.46-4.384h-4.893zm5.002 6.746h-2.936V7.361h2.936c1.523 0 2.393 1.35 2.393 2.36-.11 1.238-.98 2.474-2.393 2.474zm8.917.113l1.85.787c.434-.787 1.087-1.012 1.848-1.012 1.087 0 2.066.674 2.175 1.799v.112c-.326-.225-1.196-.562-2.066-.562-1.958 0-3.915 1.124-3.915 3.148 0 1.911 1.63 3.148 3.37 3.148 1.415 0 2.067-.675 2.61-1.35h.11v1.125h1.957v-5.396c-.217-2.474-2.066-3.935-4.35-3.935-1.522 0-3.045.674-3.589 2.136zm1.74 4.384c0-1.124 1.197-1.461 2.175-1.461.87 0 1.305.225 1.85.45-.218 1.349-1.306 2.248-2.393 2.248-.653 0-1.632-.337-1.632-1.237zm10.766-.112h-.108l-2.393-6.071h-2.175l3.589 8.544-2.066 4.722h2.066L124 10.51h-2.175l-2.284 6.07zm-15.985 2.923h2.066V5.45h-2.066v14.053z" transform="translate(-567 -833) translate(-461) translate(819 672) translate(0 146) translate(184) translate(25 15)"></path>
+                      <g>
+                        <path fill="url(#cqv5ryixya)" d="M.47.404C.16.714 0 1.232 0 1.854v22.87c0 .621.207 1.138.519 1.449l.103.103 12.86-12.832v-.207L.47.404z" transform="translate(-567 -833) translate(-461) translate(819 672) translate(0 146) translate(184) translate(25 15)"></path><path fill="url(#piafcmxlvb)" d="M13.322 13.465v-.311l4.252-4.252.103.104 5.082 2.903c1.452.83 1.452 2.178 0 3.008l-5.185 2.8-4.252-4.252z" transform="translate(-567 -833) translate(-461) translate(819 672) translate(0 146) translate(184) translate(25 15)"></path>
+                        <path fill="url(#0ad54x62ac)" d="M13.378 13.313l-6.082 6.082L.52 26.173c.518.518 1.244.518 2.177.103l15.037-8.607-4.355-4.356z" transform="translate(-567 -833) translate(-461) translate(819 672) translate(0 146) translate(184) translate(25 15)"></path><path fill="url(#97278ebn3d)" d="M2.593.35C1.659-.167.933-.063.415.455l12.963 12.86 4.252-4.356L2.593.35z" transform="translate(-567 -833) translate(-461) translate(819 672) translate(0 146) translate(184) translate(25 15)"></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="maindh">
+          <div class="maindh__options">
+            <button class="maindh__play">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M0 0h24v24H0z"></path>
+                  <path fill="#ffffff" d="M19.857 12l-12 6.857V5.143z"></path>
+                </g>
+              </svg>
+            </button>
+            <button class="maindh__sound">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M0 0h24v24H0z"></path>
+                  <path fill="#ffffff" d="M19.928 5.629A.984.984 0 0120 6v13.046a1 1 0 01-1.371.929L10 16.523v-8l8.629-3.451a1 1 0 011.3.557zM9 8.523v8H6a1 1 0 01-1-1v-6a1 1 0 011-1h3z"></path>
+                  <path fill="#ffffff" stroke="#3B3838" d="M3.868 2.247l18.385 18.385-2.121 2.121L1.747 4.368l2.121-2.121z"></path>
+                </g>
+              </svg>
+            </button>
+            <button class="maindh__wide">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <g transform="translate(-8 -8)" fill="none" fill-rule="evenodd">
+                  <circle cx="20" cy="20" r="19.5" stroke="rgba(0, 0, 0, 0)" opacity="0.96"></circle>
+                  <path fill="none" d="M11 11h18v18H11z"></path>
+                  <path fill="#ffffff" d="M19 11v2h-6v6h-2v-8h8zM21 29v-2h6v-6h2v8h-8z"></path>
+                  <path stroke="#ffffff" stroke-width="2" d="M13 13l15 15"></path>
+                  <path d="M8 8h24v24H8z"></path>
+                </g></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Second Section -->
+    <div class="white-menu">
+      <div class="whitemain__width1"></div>
+      <div class="whitemain__left"></div>
+      <div class="whitemain__center1"></div>
+      <div class="whitemain__center2"></div>
+      <div class="whitemain__videobox">
+        <video src="https://t1.kakaocdn.net/pay_brand_admin/file/FH-ctz7eER4XgUIAx-SqO/img_pc_1_kor.mp4" loop="" muted="" autoplay="" playsinline="" role="presentation" class="whitemain__video"></video>
+      </div>
+      <section class="whitemain__image1 spy">
+        <img class="mainicon back-to-position to-top delay-0" src="https://t1.kakaocdn.net/pay_brand_admin/file/NvAxmhwMItNT4J2Uq1Rxt/ic-pfm.png" alt="메인 아이콘">
+        <h1>
+          <p class="p1 back-to-position to-top delay-1">일상의 모든 금융</p>
+          <p class="p2 back-to-position to-top delay-1">한 번에 관리해요</p>
+        </h1>
+        <div class="whitemain__yellowbox back-to-position to-top delay-1"></div>
+        <button class="arrow back-to-position to-top delay-1">
+          <div class="line"></div>
+          <div class="upline"></div>
+          <div class="downline"></div>
+        </button>
+      </section>
+      <section class="whitemain__contentright spy">
+        <h1>
+          <p class="p1 back-to-position to-top delay-1">조회부터 실행까지</p>
+          <p class="p2 back-to-position to-top delay-1">대출도 톡하듯 쉽게</p>
+          <div class="whitemain__yellowbox back-to-position to-top delay-1"></div>
+          <button class="arrow back-to-position to-top delay-1">
+            <div class="line"></div>
+            <div class="upline"></div>
+            <div class="downline"></div>
+          </button>
+        </h1>
+      <img src="https://t1.kakaocdn.net/pay_brand_admin/file/mokJrnkUFm8CQHGuFPE3I/img_pc_3.png" alt="메인 이미지" role="presentation" class="back-to-position to-top delay-1">
+      </section>
+      <section class="whitemain__contentleft spy">
+        <h1>
+          <p class="p1 back-to-position to-top delay-2">내 친구의 보험은?</p>
+          <p class="p2 back-to-position to-top delay-2">궁금했던 정보가 여기에</p>
+          <div class="whitemain__yellowbox back-to-position to-top delay-2"></div>
+          <button class="arrow back-to-position to-top delay-2">
+            <div class="line"></div>
+            <div class="upline"></div>
+            <div class="downline"></div>
+          </button>
+        </h1>
+        <span>
+          <img src="https://t1.kakaocdn.net/pay_brand_admin/file/XVZtFO-S8NfCOV2X0ckgh/img_pc_2.png" alt="메인 이미지" role="presentation" class="back-to-position to-top delay-2">
+        </span>
+      </section>
+      <section class="whitemain__hundred spy">
+        <span>
+          <img src="https://t1.kakaocdn.net/pay_brand_admin/file/dO_ZocPhgOdKtTV3Yqqxo/stock_PC_kor.png" alt="메인 이미지" role="presentation" class="back-to-position to-top delay-1">
+        </span>
+        <h1>
+          <p class="back-to-position to-top delay-2">카카오페이 주식, 아직 안 써보셨어요?</p>
+        </h1>
+        <button class="arrow">
+          <div class="line"></div>
+          <div class="upline"></div>
+          <div class="downline"></div>
+        </button>
+      </section>
+      <div class="whitemain__videobox2">
+        <video src="https://t1.kakaocdn.net/pay_brand_admin/file/q7ZSC6xi48_arVJm1m0np/img_pc_5.mp4" loop="" muted="" autoplay="" playsinline="" role="presentation" class="video2"></video>
+      </div>
+      <section class="whitemain__image2 spy">
+        <img class="mainicon2 back-to-position to-top delay-0" src="https://t1.kakaocdn.net/pay_brand_admin/file/3UVJSOuzKtVSeRreXK7lt/ic-payment.png" alt="메인 아이콘">
+        <h1>
+          <p class="p1 back-to-position to-top delay-0">가까운 결제 혜택도</p>
+          <p class="p2 back-to-position to-top delay-0">놓칠 수 없죠!</p>
+        </h1>
+        <button class="arrow back-to-position to-top delay-0">
+          <div class="line"></div>
+          <div class="upline"></div>
+          <div class="downline"></div>
+        </button>       
+      </section>
+      <section class="whitemain__image3 spy">
+        <img class="mainicon3 back-to-position to-top delay-0" src="https://t1.kakaocdn.net/pay_brand_admin/file/VCY12KBAf0a6DU1069pk1/ic-ryan.png" alt="메인 아이콘">
+        <h1>
+          <p class="p1 back-to-position to-top delay-0">내가 만든 금융을</p>
+          <p class="p2 back-to-position to-top delay-0">모두가 쓰는 특별한 경험</p>
+        </h1>
+        <button class="arrow back-to-position to-top delay-0">
+          <div class="line"></div>
+          <div class="upline"></div>
+          <div class="downline"></div>
+        </button>  
+      </section>
+      <section class="whitemain__image4 spy">
+        <img class="mainimage4 back-to-position to-top delay-0" src="https://t1.kakaocdn.net/pay_brand_admin/file/bDiHU_pBylDIj42ev4OjX/img_pc_6.jpg" alt="메인 이미지" role="presentation">
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="foot">
+        <p class="tag">&copy Kakao Pay Corp.</p>
+        <div class="foot__box">
+          <div class="foot__content">
+            <a class="pointer">
+              <li class="li__first">카카오페이 윤리강령</li>
+              <li class="li__cont">카카오페이 이용약관</li>
+              <li class="li__cont">전자금융거래 이용약관</li>
+              <li class="bold">개인정보 처리방침</li>
+              <li class="li__cont">위치기반 서비스 이용약관</li>
+            </a>
+          </div>
+          <div class="foot__relate">
+            <button class="relbtn">관련 사이트
+              <span class="plus"></span>
+            </button>
+            <ul class="option">
+                <li>카카오페이증권</li>
+                <li>카카오페이 개발자센터</li>
+                <li>카카오페이 기술 블로그</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+  </div>
+</body>
+</html>
